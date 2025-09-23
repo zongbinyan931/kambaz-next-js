@@ -78,7 +78,7 @@ export default function Lab1() {
         <ul id="wd-my-books">
           <li>Dune</li>
           <li>Lord of the Rings</li>
-          <li>Ender's Game</li>
+          <li>Enders Game</li>
           <li>Red Mars</li>
           <li>The Forever War</li>
         </ul>
@@ -185,49 +185,10 @@ export default function Lab1() {
         <br />
         <img id="wd-teslabot" src="/images/teslabot.jpg" height="200px" />
       </div>
-      <div id="wd-forms">
-        <h4>Form Elements</h4>
-        <form id="wd-text-fields">
-          <h5>Text Fields</h5>
-          <label htmlFor="wd-text-fields-username">Username:</label>
-          <input placeholder="jdoe" id="wd-text-fields-username" /> <br />
-          <label htmlFor="wd-text-fields-password">Password:</label>
-          <input
-            type="password"
-            value="123@#$asd"
-            id="wd-text-fields-password"
-          />
-          <br />
-          <label htmlFor="wd-text-fields-first-name">First name:</label>
-          <input type="text" title="John" id="wd-text-fields-first-name" />{" "}
-          <br />
-          <label htmlFor="wd-text-fields-last-name">Last name:</label>
-          <input
-            type="text"
-            placeholder="Doe"
-            value="Wonderland"
-            title="The last name"
-            id="wd-text-fields-last-name"
-          />
-          <h5>Text boxes</h5>
-          <label>Biography:</label>
-          <br />
-          <textarea id="wd-textarea" cols={30} rows={10}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </textarea>
-        </form>
-      </div>
 
       <div id="wd-forms">
         <h4>Form Elements</h4>
         <form id="wd-form-elements">
-          {/* 1.3.7.1 Text Fields */}
           <h5>Text Fields</h5>
           <label htmlFor="wd-text-fields-username">Username:</label>
           <input placeholder="jdoe" id="wd-text-fields-username" /> <br />
@@ -250,7 +211,6 @@ export default function Lab1() {
             id="wd-text-fields-last-name"
           />
           <br />
-          {/* 1.3.7.2 Textarea */}
           <h5>Text boxes</h5>
           <label htmlFor="wd-textarea">Biography:</label>
           <br />
@@ -290,7 +250,7 @@ export default function Lab1() {
           <input type="radio" name="radio-genre" id="wd-radio-fantasy" />
           <label htmlFor="wd-radio-fantasy">Fantasy</label>
           <br />
-          {/* 1.3.7.5 Checkboxes */}
+
           <h5 id="wd-checkboxes">Checkboxes</h5>
           <label>Favorite movie genre:</label>
           <br />
@@ -359,23 +319,33 @@ export default function Lab1() {
           <br />
         </form>
       </div>
-      <div id="wd-anchors">
+
+      {/* ---------- 1.3.8 Anchor ---------- */}
+      <div id="wd-anchors" style={{ marginTop: 24 }}>
         <h4>Anchor tag</h4>
         Please{" "}
-        <a href="https://www.lipsum.com" id="wd-lipsum">
+        <a
+          href="https://www.lipsum.com"
+          id="wd-lipsum"
+          target="_blank"
+          rel="noreferrer"
+        >
           click here
         </a>{" "}
         to get dummy text
         <br />
-        My GitHub Repository:
+        My GitHub Repository:{" "}
         <a
-          href=
+          href="https://github.com/zongbinyan931/kambaz-next-js"
           id="wd-github"
           target="_blank"
           rel="noreferrer"
         >
           GitHub Repo
         </a>
+        <br />
+        <a href="/Labs">All Labs</a> {" | "}
+        <a href="/kambaz">Kambaz App</a>
       </div>
     </div>
   );
