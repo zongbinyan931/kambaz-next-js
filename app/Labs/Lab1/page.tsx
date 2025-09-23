@@ -179,11 +179,17 @@ export default function Lab1() {
           id="wd-starship"
           width="400px"
           src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"
+          alt="SpaceX Starship rocket"
         />
         <br />
         Loading a local image:
         <br />
-        <img id="wd-teslabot" src="/images/teslabot.jpg" height="200px" />
+        <img
+          id="wd-teslabot"
+          src="/images/teslabot.jpg"
+          height="200px"
+          alt="Tesla humanoid robot"
+        />
       </div>
 
       <div id="wd-forms">
@@ -250,7 +256,6 @@ export default function Lab1() {
           <input type="radio" name="radio-genre" id="wd-radio-fantasy" />
           <label htmlFor="wd-radio-fantasy">Fantasy</label>
           <br />
-
           <h5 id="wd-checkboxes">Checkboxes</h5>
           <label>Favorite movie genre:</label>
           <br />

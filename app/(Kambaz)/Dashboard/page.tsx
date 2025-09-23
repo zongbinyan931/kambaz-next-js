@@ -48,9 +48,9 @@ export default function Dashboard() {
             >
               <Image
                 src="/images/reactjs.jpg"
-                alt="course cover"
                 width={200}
                 height={150}
+                alt="React course"
               />
               <div style={{ padding: 12 }}>
                 <h5 style={{ margin: 0 }}>
