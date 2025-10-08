@@ -1,72 +1,107 @@
+"use client";
+
 import Link from "next/link";
-import Image from "next/image";
+import {
+  Row,
+  Col,
+  Card,
+  CardImg,
+  CardBody,
+  CardTitle,
+  CardText,
+  Button,
+} from "react-bootstrap";
 
 const courses = [
-  { id: "1234", code: "CS1234", name: "React JS" },
-  { id: "5610", code: "CS5610", name: "Web Development" },
-  { id: "5800", code: "CS5800", name: "Algorithms" },
-  { id: "5010", code: "CS5010", name: "Program Design" },
-  { id: "5200", code: "CS5200", name: "DB Systems" },
-  { id: "6220", code: "CS6220", name: "Data Mining" },
-  { id: "5770", code: "CS5770", name: "Cloud Computing" },
+  {
+    code: "CS1234",
+    title: "React JS",
+    img: "/images/reactjs.jpg",
+    desc: "Full Stack software developer",
+  },
+  {
+    code: "CS4550",
+    title: "Web Dev",
+    img: "/images/reactjs.jpg",
+    desc: "Client/Server, REST, MongoDB",
+  },
+  {
+    code: "CS5610",
+    title: "Web Tools",
+    img: "/images/reactjs.jpg",
+    desc: "Next.js, Bootstrap, TS",
+  },
+  {
+    code: "CS5004",
+    title: "OOP",
+    img: "/images/reactjs.jpg",
+    desc: "Java, design principles",
+  },
+  {
+    code: "CS5800",
+    title: "Algorithms",
+    img: "/images/reactjs.jpg",
+    desc: "Greedy, DP, graphs",
+  },
+  {
+    code: "CS5500",
+    title: "SE",
+    img: "/images/reactjs.jpg",
+    desc: "Process & testing",
+  },
+  {
+    code: "CS5200",
+    title: "DB Systems",
+    img: "/images/reactjs.jpg",
+    desc: "SQL, ER, indexing",
+  },
+  // add more if you want
 ];
 
-export default function Dashboard() {
+export default function DashboardPage() {
   return (
-    <div id="wd-dashboard" style={{ padding: 16 }}>
+    <div id="wd-dashboard">
       <h1 id="wd-dashboard-title">Dashboard</h1>
       <hr />
       <h2 id="wd-dashboard-published">Published Courses ({courses.length})</h2>
       <hr />
 
-      <div
-        id="wd-dashboard-courses"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          gap: 16,
-        }}
-      >
-        {courses.map((c) => (
-          <div
-            key={c.id}
-            className="wd-dashboard-course"
-            style={{
-              border: "1px solid #ddd",
-              borderRadius: 8,
-              overflow: "hidden",
-            }}
-          >
-            <Link
-              href={`/Courses/${c.id}`}
-              className="wd-dashboard-course-link"
-              style={{
-                display: "block",
-                textDecoration: "none",
-                color: "inherit",
-              }}
+      <div id="wd-dashboard-courses">
+        <Row xs={1} md={5} className="g-4">
+          {courses.map((c) => (
+            <Col
+              key={c.code}
+              className="wd-dashboard-course"
+              style={{ width: "300px" }}
             >
-              <Image
-                src="/images/reactjs.jpg"
-                width={200}
-                height={150}
-                alt="React course"
-              />
-              <div style={{ padding: 12 }}>
-                <h5 style={{ margin: 0 }}>
-                  {c.code} {c.name}
-                </h5>
-                <p
-                  className="wd-dashboard-course-title"
-                  style={{ marginTop: 8 }}
+              <Card>
+                <Link
+                  href="/Courses/1234/Home"
+                  className="wd-dashboard-course-link text-decoration-none text-dark"
                 >
-                  Full Stack software developer
-                </p>
-                <button>Go</button>
-              </div>
-            </Link>
-          </div>
-        ))}
+                  <CardImg
+                    variant="top"
+                    src={c.img}
+                    width="100%"
+                    height={160}
+                  />
+                  <CardBody>
+                    <CardTitle className="wd-dashboard-course-title text-nowrap overflow-hidden">
+                      {c.code} {c.title}
+                    </CardTitle>
+                    <CardText
+                      className="wd-dashboard-course-description overflow-hidden"
+                      style={{ height: "100px" }}
+                    >
+                      {c.desc}
+                    </CardText>
+                    <Button variant="primary">Go</Button>
+                  </CardBody>
+                </Link>
+              </Card>
+            </Col>
+          ))}
+        </Row>
       </div>
     </div>
   );

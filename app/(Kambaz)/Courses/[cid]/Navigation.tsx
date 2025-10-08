@@ -1,23 +1,39 @@
+"use client";
+
 import Link from "next/link";
+import { useParams, usePathname } from "next/navigation";
+
 export default function CourseNavigation() {
+  const { cid } = useParams<{ cid: string }>();
+  const pathname = usePathname();
+
+  const mk = (path: string) => `/Courses/${cid}${path}`;
+  const isActive = (href: string) =>
+    pathname === href || pathname?.startsWith(href + "/");
+
+  const item = (href: string, id: string, label: string) => (
+    <Link
+      href={href}
+      id={id}
+      className={`list-group-item border-0 ${
+        isActive(href) ? "active" : "text-danger"
+      }`}
+    >
+      {label}
+    </Link>
+  );
+
   return (
-    <div id="wd-courses-navigation">
-      <Link href="Home">Home</Link>
-      <br />
-      <Link href="Modules">Modules</Link>
-      <br />
-      <Link href="Piazza">Piazza</Link>
-      <br />
-      <Link href="Zoom">Zoom</Link>
-      <br />
-      <Link href="Assignments">Assignments</Link>
-      <br />
-      <Link href="Quizzes">Quizzes</Link>
-      <br />
-      <Link href="Grades">Grades</Link>
-      <br />
-      <Link href="People">People</Link>
-      <br />
+    <div id="wd-courses-navigation" className="wd list-group fs-5 rounded-0">
+      {item(mk("/Home"), "wd-course-home-link", "Home")}
+      {item(mk("/Modules"), "wd-course-modules-link", "Modules")}
+      {item(mk("/Piazza"), "wd-course-piazza-link", "Piazza")}
+      {item(mk("/Zoom"), "wd-course-zoom-link", "Zoom")}
+      {item(mk("/Assignments"), "wd-course-assignments-link", "Assignments")}
+      {item(mk("/Quizzes"), "wd-course-quizzes-link", "Quizzes")}
+      {item(mk("/People/Table"), "wd-course-people-link", "People")}
+      {item(mk("/Grades"), "wd-course-grades-link", "Grades")}
+      {item(mk("/Settings"), "wd-course-settings-link", "Settings")}
     </div>
   );
 }

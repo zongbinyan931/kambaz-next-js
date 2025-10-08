@@ -1,22 +1,62 @@
+"use client";
+import { Button } from "react-bootstrap";
+import { MdDoNotDisturbAlt } from "react-icons/md";
+import { FaCheckCircle } from "react-icons/fa";
+import { BiImport } from "react-icons/bi";
+import { LiaFileImportSolid } from "react-icons/lia";
+import { AiOutlineHome } from "react-icons/ai";
+import { MdStream } from "react-icons/md";
+import { TbSpeakerphone } from "react-icons/tb";
+import { MdOutlineAnalytics } from "react-icons/md";
+import { IoNotificationsOutline } from "react-icons/io5";
+
 export default function CourseStatus() {
   return (
     <div id="wd-course-status">
       <h2>Course Status</h2>
-
-      <div style={{ display: "flex", gap: 8, marginBottom: 8 }}>
-        <button>Unpublish</button>
-        <button>Publish</button>
+      <div className="d-flex">
+        <div className="w-50 pe-1">
+          <Button variant="secondary" size="lg" className="w-100 text-nowrap">
+            <MdDoNotDisturbAlt className="me-2 fs-5" />
+            Unpublish
+          </Button>
+        </div>
+        <div className="w-50">
+          <Button variant="success" size="lg" className="w-100 text-nowrap">
+            <FaCheckCircle className="me-2 fs-5" />
+            Publish
+          </Button>
+        </div>
       </div>
 
-      <div style={{ display: "grid", gap: 6, maxWidth: 240 }}>
-        <button>Import Existing Content</button>
-        <button>Import from Commons</button>
-        <button>Choose Home Page</button>
-        <button>View Course Stream</button>
-        <button>New Announcement</button>
-        <button>New Analytics</button>
-        <button>View Course Notifications</button>
-      </div>
+      <Button variant="secondary" size="lg" className="w-100 mt-2 text-start">
+        <BiImport className="me-2 fs-5" />
+        Import Existing Content
+      </Button>
+      <Button variant="secondary" size="lg" className="w-100 mt-2 text-start">
+        <LiaFileImportSolid className="me-2 fs-5" />
+        Import from Commons
+      </Button>
+      <Button variant="secondary" size="lg" className="w-100 mt-2 text-start">
+        <AiOutlineHome className="me-2 fs-5" />
+        Choose Home Page
+      </Button>
+      <Button variant="secondary" size="lg" className="w-100 mt-2 text-start">
+        <MdStream className="me-2 fs-5" />
+        View Course Stream
+      </Button>
+      <Button variant="secondary" size="lg" className="w-100 mt-2 text-start">
+        <TbSpeakerphone className="me-2 fs-5" />
+        New Announcement
+      </Button>
+      <Button variant="secondary" size="lg" className="w-100 mt-2 text-start">
+        <MdOutlineAnalytics className="me-2 fs-5" />
+        New Analytics
+      </Button>
+      <Button variant="secondary" size="lg" className="w-100 mt-2 text-start">
+        <IoNotificationsOutline className="me-2 fs-5" />
+        View Course Notifications
+      </Button>
     </div>
   );
 }

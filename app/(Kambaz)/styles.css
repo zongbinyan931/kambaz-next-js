@@ -1,0 +1,147 @@
+/* === Base: resets & fonts === */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body * {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* === Layout offsets === */
+@media (min-width: 768px) {
+    #wd-kambaz .wd-main-content-offset {
+        padding-left: 140px !important;
+    }
+}
+
+/* If you actually use .wd-course-main-offset, keep this; otherwise remove */
+@media (min-width: 768px) {
+    #wd-courses .wd-course-main-offset {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+    }
+}
+
+/* === Bootstrap tone tweaks (shared) === */
+.btn-secondary {
+    --bs-btn-color: #000 !important;
+    --bs-btn-bg: #c7cdd1 !important;
+    --bs-btn-border-color: #c7cdd1 !important;
+    --bs-btn-hover-color: #fff !important;
+}
+
+.list-group-item {
+    --bs-list-group-border-color: #cfcfcf;
+}
+
+/* === Modules/Home (kept as-is if你还在用) === */
+.bg-secondary {
+    --bs-secondary-rgb: 199, 205, 209;
+}
+
+.border-gray {
+    border: 1px solid gray !important;
+}
+
+.wd-lesson {
+    border-left: 4px solid #198754 !important;
+}
+
+/* unify 4px */
+#wd-home {
+    gap: 12px;
+}
+
+#wd-home .min-w-0 {
+    min-width: 0;
+}
+
+#wd-course-status {
+    width: clamp(240px, 19vw, 280px);
+}
+
+@media (max-width: 1199.98px) {
+    #wd-course-status {
+        display: none !important;
+    }
+}
+
+#wd-modules-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: nowrap;
+}
+
+#wd-modules-controls .btn,
+#wd-modules-controls .dropdown-toggle {
+    white-space: nowrap;
+}
+
+#wd-modules,
+#wd-modules * {
+    max-width: 100%;
+}
+
+/* === Assignments (scoped) === */
+#wd-assignments .wd-toolbar .clear-both {
+    clear: both;
+}
+
+#wd-assignments .wd-group-header {
+    background: #f7f7f7;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 10px 12px;
+}
+
+#wd-assignments .list-group-item {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-left: 4px solid #198754 !important;
+    /* unify 4px success green */
+    border-radius: 6px;
+}
+
+#wd-assignments .list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+#wd-assignments .wd-row {
+    /* extra safety if某些 item用了这个类名 */
+    border-left: 4px solid #198754 !important;
+}
+
+#wd-assignments .wd-meta {
+    font-size: 0.9rem;
+    line-height: 1.25rem;
+}
+
+#wd-assignments .wd-assignment-title {
+    font-weight: 700;
+    color: #111;
+}
+
+#wd-assignments .wd-assignment-title:hover {
+    text-decoration: underline;
+}
+
+/* === Edit Assignment (scoped) === */
+#wd-edit-assignment h2 {
+    font-size: 1.4rem;
+}
+
+#wd-edit-assignment .wd-callout {
+    background: #fafafa;
+    border: 1px solid #dee2e6;
+    padding: 14px;
+    line-height: 1.45;
+    white-space: pre-wrap;
+}
+
+#wd-edit-assignment .wd-panel {
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    background: #fff;
+}

@@ -1,42 +1,38 @@
-import Link from "next/link";
+"use client";
+import { Form, Button } from "react-bootstrap";
 
 export default function Profile() {
   return (
-    <div id="wd-profile-screen">
-      <h3>Profile</h3>
-      <input
+    <div id="wd-profile-screen" className="p-4" style={{ maxWidth: 420 }}>
+      <h1 className="mb-3">Profile</h1>
+
+      <Form.Control
+        id="wd-profile-username"
         defaultValue="alice"
-        placeholder="username"
-        className="wd-username"
+        className="mb-2"
       />
-      <br />
-      <input
+      <Form.Control
+        id="wd-profile-password"
         defaultValue="123"
-        placeholder="password"
-        type="password"
-        className="wd-password"
+        className="mb-2"
       />
-      <br />
-      <input defaultValue="Alice" placeholder="First Name" id="wd-firstname" />
-      <br />
-      <input
-        defaultValue="Wonderland"
-        placeholder="Last Name"
+      <Form.Control id="wd-firstname" defaultValue="Alice" className="mb-2" />
+      <Form.Control
         id="wd-lastname"
+        defaultValue="Wonderland"
+        className="mb-2"
       />
-      <br />
-      <input defaultValue="2000-01-01" type="date" id="wd-dob" />
-      <br />
-      <input defaultValue="alice@wonderland" type="email" id="wd-email" />
-      <br />
-      <select defaultValue="FACULTY" id="wd-role">
-        <option value="USER">User</option>
-        <option value="ADMIN">Admin</option>
-        <option value="FACULTY">Faculty</option>
-        <option value="STUDENT">Student</option>
-      </select>
-      <br />
-      <Link href="/Account/Signin"> Sign out </Link>
+      <Form.Control id="wd-dob" type="date" className="mb-2" />
+      <Form.Control
+        id="wd-email"
+        defaultValue="alice@wonderland.com"
+        className="mb-2"
+      />
+      <Form.Control id="wd-role" defaultValue="User" className="mb-3" />
+
+      <Button id="wd-signout-btn" variant="danger" className="w-100">
+        Signout
+      </Button>
     </div>
   );
 }
