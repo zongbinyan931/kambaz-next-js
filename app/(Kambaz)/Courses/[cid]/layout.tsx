@@ -20,7 +20,7 @@ export default async function CourseLayout({
       <hr />
       <div className="d-flex gap-4">
         <div className="d-none d-md-block" style={{ width: 200 }}>
-          <CourseNavigation cid={cid} />
+          <CourseNavigation />
         </div>
         <div className="flex-fill">{children}</div>
       </div>

@@ -15,15 +15,15 @@ export default function Signin() {
         className="mb-3"
       />
 
-      <Button
+      <Link
         id="wd-signin-btn"
-        as={Link}
         href="/Account/Profile"
-        variant="primary"
-        className="w-100 mb-2"
+        className="w-100 d-block mb-2"
       >
-        Signin
-      </Button>
+        <Button variant="primary" className="w-100">
+          Signin
+        </Button>
+      </Link>
 
       <Link id="wd-signup-link" href="/Account/Signup">
         Signup

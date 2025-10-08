@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Button, Form, Row, Col, Badge } from "react-bootstrap";
+import { Form, Row, Col, Button, Card } from "react-bootstrap";
 
 type Params = { cid: string; aid: string };
 
@@ -38,13 +38,14 @@ The Kanbas application should include a link to navigate back to the landing pag
         </Form.Group>
 
         <Row className="g-3">
-          <Col md={6}>
+          <Col xs={12}>
             <Form.Group>
               <Form.Label>Points</Form.Label>
               <Form.Control type="number" defaultValue={100} />
             </Form.Group>
           </Col>
-          <Col md={6}>
+
+          <Col xs={12}>
             <Form.Group>
               <Form.Label>Assignment Group</Form.Label>
               <Form.Select defaultValue="ASSIGNMENTS">
@@ -55,10 +56,8 @@ The Kanbas application should include a link to navigate back to the landing pag
               </Form.Select>
             </Form.Group>
           </Col>
-        </Row>
 
-        <Row className="g-3 mt-1">
-          <Col md={6}>
+          <Col xs={12}>
             <Form.Group>
               <Form.Label>Display Grade as</Form.Label>
               <Form.Select defaultValue="Percentage">
@@ -69,7 +68,8 @@ The Kanbas application should include a link to navigate back to the landing pag
               </Form.Select>
             </Form.Group>
           </Col>
-          <Col md={6}>
+
+          <Col xs={12}>
             <Form.Group>
               <Form.Label>Submission Type</Form.Label>
               <Form.Select defaultValue="Online">
@@ -78,23 +78,26 @@ The Kanbas application should include a link to navigate back to the landing pag
                 <option>No Submission</option>
               </Form.Select>
             </Form.Group>
+          </Col>
 
-            <div className="wd-panel mt-2 p-3">
-              <div className="fw-semibold mb-2">Online Entry Options</div>
+          <Col xs={12}>
+            <Card className="p-3">
+              <Card.Title className="fs-6 mb-2">
+                Online Entry Options
+              </Card.Title>
               <Form.Check id="opt-text" label="Text Entry" />
               <Form.Check id="opt-url" label="Website URL" defaultChecked />
               <Form.Check id="opt-media" label="Media Recordings" />
               <Form.Check id="opt-annot" label="Student Annotation" />
               <Form.Check id="opt-file" label="File Uploads" />
-            </div>
+            </Card>
           </Col>
-        </Row>
 
-        <div className="wd-panel p-3 mt-4">
-          <div className="fw-semibold mb-3">Assign</div>
-          <Row className="g-3">
-            <Col md={6}>
-              <Form.Group>
+          <Col xs={12}>
+            <Card className="p-3">
+              <Card.Title className="fs-6 mb-3">Assign</Card.Title>
+
+              <Form.Group className="mb-3">
                 <Form.Label>Assign to</Form.Label>
                 <div
                   className="form-control d-flex align-items-center flex-wrap"
@@ -105,46 +108,43 @@ The Kanbas application should include a link to navigate back to the landing pag
                   </span>
                 </div>
               </Form.Group>
-            </Col>
-            <Col md={6} />
 
-            <Col md={6}>
-              <Form.Group>
-                <Form.Label>Due</Form.Label>
-                <Form.Control
-                  type="datetime-local"
-                  defaultValue="2024-05-13T23:59"
-                />
-              </Form.Group>
-            </Col>
-            <Col md={6} />
+              <Row className="g-3">
+                <Col xs={12} md={6}>
+                  <Form.Group>
+                    <Form.Label>Due</Form.Label>
+                    <Form.Control
+                      type="datetime-local"
+                      defaultValue="2024-05-13T23:59"
+                    />
+                  </Form.Group>
+                </Col>
+                <Col xs={12} md={6} />
 
-            <Col md={6}>
-              <Form.Group>
-                <Form.Label>Available from</Form.Label>
-                <Form.Control
-                  type="datetime-local"
-                  defaultValue="2024-05-06T12:00"
-                />
-              </Form.Group>
-            </Col>
-            <Col md={6}>
-              <Form.Group>
-                <Form.Label>Until</Form.Label>
-                <Form.Control type="datetime-local" />
-              </Form.Group>
-            </Col>
-          </Row>
-        </div>
+                <Col xs={12} md={6}>
+                  <Form.Group>
+                    <Form.Label>Available from</Form.Label>
+                    <Form.Control
+                      type="datetime-local"
+                      defaultValue="2024-05-06T12:00"
+                    />
+                  </Form.Group>
+                </Col>
+                <Col xs={12} md={6}>
+                  <Form.Group>
+                    <Form.Label>Until</Form.Label>
+                    <Form.Control type="datetime-local" />
+                  </Form.Group>
+                </Col>
+              </Row>
+            </Card>
+          </Col>
+        </Row>
 
         <div className="d-flex justify-content-end gap-2 mt-4">
-          <Button
-            as={Link}
-            href={`/Courses/${cid}/Assignments`}
-            variant="secondary"
-          >
-            Cancel
-          </Button>
+          <Link href={`/Courses/${cid}/Assignments`} className="d-inline-block">
+            <Button variant="secondary">Cancel</Button>
+          </Link>
           <Button variant="danger">Save</Button>
         </div>
       </Form>
